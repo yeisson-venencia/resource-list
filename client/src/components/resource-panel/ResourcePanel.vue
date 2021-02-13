@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header>
-      <h1>List of Resources</h1>
-    </header>
+    <content-title>List of Resources</content-title>
     <ul>
       <resource-panel-item
         v-for="res in storedResources"
@@ -26,12 +24,6 @@ export default {
 </script>
 
 <style scoped>
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 ul {
   list-style: none;
   margin: 0;
