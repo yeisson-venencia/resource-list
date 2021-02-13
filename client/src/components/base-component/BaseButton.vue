@@ -1,11 +1,13 @@
 <template>
-  <button :type="type" :class="mode"></button>
+  <button :type="type" :class="mode">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
   props: {
-    type: { type: String, required: true },
+    type: { type: String, required: false },
     mode: { type: String, required: false }
   }
 };
