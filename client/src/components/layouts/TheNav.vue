@@ -1,7 +1,11 @@
 <template>
   <div>
-    <base-card v-for="tab in tabs" :key="tab.component">
-      <base-button @click="changeTab(tab.component)">
+    <base-card>
+      <base-button
+        v-for="tab in tabs"
+        :key="tab.component"
+        @click="changeTab(tab.component)"
+      >
         {{ tab.label }}
       </base-button>
     </base-card>
