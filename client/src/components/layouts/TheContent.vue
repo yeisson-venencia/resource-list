@@ -1,10 +1,7 @@
 <template>
   <keep-alive>
-    <component :is="contentId" :storedResources="storedResources"></component>
+    <component :is="contentId"></component>
   </keep-alive>
-  <!-- <div>
-    <resource-panel :storedResources="storedResources"></resource-panel>
-  </div> -->
 </template>
 
 <script>
@@ -32,6 +29,11 @@ export default {
           link: 'http://google.com'
         }
       ]
+    };
+  },
+  provide() {
+    return {
+      storedResources: this.storedResources
     };
   }
 };

@@ -21,12 +21,7 @@ import ResourcePanelItem from './ResourcePanelItem';
 
 export default {
   components: { ResourcePanelItem },
-  props: {
-    storedResources: {
-      type: Array,
-      required: true
-    }
-  }
+  inject: ['storedResources']
 };
 </script>
 

@@ -1,7 +1,11 @@
 <template>
   <div>
     <the-header title="Resource Manager"></the-header>
-    <the-nav :tabs="tabs" @change-content="changeContent"></the-nav>
+    <the-nav
+      :tabs="tabs"
+      @change-content="changeContent"
+      :currentTab="selectedContent"
+    ></the-nav>
     <the-content :contentId="selectedContent"></the-content>
   </div>
 </template>

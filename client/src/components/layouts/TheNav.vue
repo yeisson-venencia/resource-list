@@ -5,6 +5,7 @@
         v-for="tab in tabs"
         :key="tab.component"
         @click="changeTab(tab.component)"
+        :mode="tab.component === currentTab ? null : 'flat'"
       >
         {{ tab.label }}
       </base-button>
@@ -17,6 +18,10 @@ export default {
   props: {
     tabs: {
       type: Array,
+      required: true
+    },
+    currentTab: {
+      type: String,
       required: true
     }
   },
