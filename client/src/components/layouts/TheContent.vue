@@ -1,13 +1,21 @@
 <template>
-  <div>
+  <keep-alive>
+    <component :is="contentId" :storedResources="storedResources"></component>
+  </keep-alive>
+  <!-- <div>
     <resource-panel :storedResources="storedResources"></resource-panel>
-  </div>
+  </div> -->
 </template>
 
 <script>
 import ResourcePanel from '../resource-panel/ResourcePanel';
+import AddResource from '../resource-form/AddResource';
+
 export default {
-  components: { ResourcePanel },
+  components: { ResourcePanel, AddResource },
+  props: {
+    contentId: { type: String, required: true }
+  },
   data() {
     return {
       storedResources: [

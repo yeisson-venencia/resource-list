@@ -1,8 +1,8 @@
 <template>
   <div>
     <the-header title="Resource Manager"></the-header>
-    <the-nav :tabs="tabs"></the-nav>
-    <the-content></the-content>
+    <the-nav :tabs="tabs" @change-content="changeContent"></the-nav>
+    <the-content :contentId="selectedContent"></the-content>
   </div>
 </template>
 
@@ -18,8 +18,14 @@ export default {
       tabs: [
         { component: 'resource-panel', label: 'Resource List' },
         { component: 'add-resource', label: 'Add Resource' }
-      ]
+      ],
+      selectedContent: 'resource-panel'
     };
+  },
+  methods: {
+    changeContent(content) {
+      this.selectedContent = content;
+    }
   }
 };
 </script>
