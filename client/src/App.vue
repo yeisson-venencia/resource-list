@@ -1,21 +1,12 @@
 <template>
-  <ul>
-    <resource-panel-item
-      v-for="res in storedResources"
-      :key="res.id"
-      :id="res.id"
-      :title="res.title"
-      :description="res.description"
-      :link="res.link"
-    ></resource-panel-item>
-  </ul>
+  <resource-panel :storedResources="storedResources"></resource-panel>
 </template>
 
 <script>
-import ResourcePanelItem from './components/ResorcePanelItem';
+import ResourcePanel from './components/resource-panel/ResourcePanel';
 
 export default {
-  components: { ResourcePanelItem },
+  components: { ResourcePanel },
   data() {
     return {
       storedResources: [
