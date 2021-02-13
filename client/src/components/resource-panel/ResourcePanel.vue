@@ -29,3 +29,19 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  max-width: 40rem;
+}
+</style>
