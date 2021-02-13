@@ -1,6 +1,7 @@
 <template>
   <div>
     <the-header title="Resource Manager"></the-header>
+    <the-nav></the-nav>
     <resource-panel :storedResources="storedResources"></resource-panel>
   </div>
 </template>
@@ -8,9 +9,10 @@
 <script>
 import ResourcePanel from './components/resource-panel/ResourcePanel';
 import TheHeader from './components/layouts/TheHeader';
+import TheNav from './components/layouts/TheNav';
 
 export default {
-  components: { ResourcePanel, TheHeader },
+  components: { ResourcePanel, TheHeader, TheNav },
   data() {
     return {
       storedResources: [
