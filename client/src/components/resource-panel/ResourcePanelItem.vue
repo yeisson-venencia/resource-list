@@ -1,15 +1,15 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <button @click="deleteResource">Delete</button>
+        <base-button mode="flat" @click="deleteResource">Delete</base-button>
       </header>
-    </div>
-    <p>{{ description }}</p>
-    <nav>
-      <a :href="link">Go to resource...</a>
-    </nav>
+      <p>{{ description }}</p>
+      <nav>
+        <a :href="link">Go to resource...</a>
+      </nav>
+    </base-card>
   </li>
 </template>
 

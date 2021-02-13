@@ -1,12 +1,16 @@
 <template>
-  <resource-panel :storedResources="storedResources"></resource-panel>
+  <div>
+    <the-header title="Resource Manager"></the-header>
+    <resource-panel :storedResources="storedResources"></resource-panel>
+  </div>
 </template>
 
 <script>
 import ResourcePanel from './components/resource-panel/ResourcePanel';
+import TheHeader from './components/layouts/TheHeader';
 
 export default {
-  components: { ResourcePanel },
+  components: { ResourcePanel, TheHeader },
   data() {
     return {
       storedResources: [
