@@ -42,12 +42,19 @@ export default {
         link
       });
       this.$emit('resource-added', 'resource-panel');
+    },
+    deleteResource(resourceId) {
+      const resourceIndex = this.storedResources.findIndex(
+        res => res.id === resourceId
+      );
+      this.storedResources.splice(resourceIndex, 1);
     }
   },
   provide() {
     return {
       storedResources: this.storedResources,
-      addResource: this.addResource
+      addResource: this.addResource,
+      deleteResource: this.deleteResource
     };
   }
 };
