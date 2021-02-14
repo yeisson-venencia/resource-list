@@ -33,13 +33,16 @@ export default {
   inject: ['addResource'],
   methods: {
     submitData() {
-      const enteredTitle = this.$refs.titleInput.value;
-      const enteredDescription = this.$refs.descriptionInput.value;
-      const enteredLink = this.$refs.linkInput.value;
+      const enteredTitle = this.$refs.titleInput.value.trim();
+      const enteredDescription = this.$refs.descriptionInput.value.trim();
+      const enteredLink = this.$refs.linkInput.value.trim();
 
-      this.cleanForm();
-
-      this.addResource(enteredTitle, enteredDescription, enteredLink);
+      if (enteredTitle && enteredDescription && enteredLink) {
+        this.cleanForm();
+        this.addResource(enteredTitle, enteredDescription, enteredLink);
+      } else {
+        alert('Infor mala');
+      }
     },
     cleanForm() {
       this.$refs.titleInput.value = '';
