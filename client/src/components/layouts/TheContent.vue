@@ -1,7 +1,5 @@
 <template>
-  <keep-alive>
-    <component :is="contentId"></component>
-  </keep-alive>
+  <component :is="contentId"></component>
 </template>
 
 <script>
