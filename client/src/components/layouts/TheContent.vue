@@ -13,6 +13,7 @@ export default {
   props: {
     contentId: { type: String, required: true }
   },
+  emits: ['resource-added'],
   data() {
     return {
       storedResources: [
@@ -31,9 +32,22 @@ export default {
       ]
     };
   },
+  methods: {
+    addResource(title, description, link) {
+      const id = new Date().toISOString();
+      this.storedResources.unshift({
+        id,
+        title,
+        description,
+        link
+      });
+      this.$emit('resource-added', 'resource-panel');
+    }
+  },
   provide() {
     return {
-      storedResources: this.storedResources
+      storedResources: this.storedResources,
+      addResource: this.addResource
     };
   }
 };
