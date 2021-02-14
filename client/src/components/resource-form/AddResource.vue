@@ -2,7 +2,7 @@
   <div>
     <content-title>Add Resource</content-title>
     <base-card>
-      <form action="" @submit.prevent>
+      <form action="" @submit.prevent="submitData">
         <div class="form-control">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" ref="titleInput" />
@@ -21,9 +21,7 @@
           <input type="url" id="link" name="link" ref="linkInput" />
         </div>
         <div>
-          <base-button @click="submitData" type="submit"
-            >Add Resource</base-button
-          >
+          <base-button type="submit">Add Resource</base-button>
         </div>
       </form>
     </base-card>
@@ -39,7 +37,14 @@ export default {
       const enteredDescription = this.$refs.descriptionInput.value;
       const enteredLink = this.$refs.linkInput.value;
 
+      this.cleanForm();
+
       this.addResource(enteredTitle, enteredDescription, enteredLink);
+    },
+    cleanForm() {
+      this.$refs.titleInput.value = '';
+      this.$refs.descriptionInput.value = '';
+      this.$refs.linkInput.value = '';
     }
   }
 };
