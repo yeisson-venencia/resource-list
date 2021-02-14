@@ -1,33 +1,38 @@
 <template>
   <div>
     <the-header title="Resource Manager"></the-header>
-    <resource-panel :storedResources="storedResources"></resource-panel>
+    <the-nav
+      :tabs="tabs"
+      @change-content="changeContent"
+      :currentTab="selectedContent"
+    ></the-nav>
+    <the-content
+      :contentId="selectedContent"
+      @resource-added="changeContent"
+    ></the-content>
   </div>
 </template>
 
 <script>
-import ResourcePanel from './components/resource-panel/ResourcePanel';
+import TheContent from './components/layouts/TheContent';
 import TheHeader from './components/layouts/TheHeader';
+import TheNav from './components/layouts/TheNav';
 
 export default {
-  components: { ResourcePanel, TheHeader },
+  components: { TheContent, TheHeader, TheNav },
   data() {
     return {
-      storedResources: [
-        {
-          id: 'official-guide',
-          title: 'Official Guide',
-          description: 'the oficial VueJS documentation',
-          link: 'http://vuejs.org'
-        },
-        {
-          id: 'google',
-          title: 'Google',
-          description: 'Learn to google..',
-          link: 'http://google.com'
-        }
-      ]
+      tabs: [
+        { component: 'resource-panel', label: 'Resource List' },
+        { component: 'add-resource', label: 'Add Resource' }
+      ],
+      selectedContent: 'resource-panel'
     };
+  },
+  methods: {
+    changeContent(content) {
+      this.selectedContent = content;
+    }
   }
 };
 </script>

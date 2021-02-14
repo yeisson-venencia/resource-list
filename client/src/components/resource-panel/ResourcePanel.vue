@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header>
-      <h1>List of Resources</h1>
-    </header>
+    <content-title>List of Resources</content-title>
     <ul>
       <resource-panel-item
         v-for="res in storedResources"
@@ -21,22 +19,11 @@ import ResourcePanelItem from './ResourcePanelItem';
 
 export default {
   components: { ResourcePanelItem },
-  props: {
-    storedResources: {
-      type: Array,
-      required: true
-    }
-  }
+  inject: ['storedResources']
 };
 </script>
 
 <style scoped>
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 ul {
   list-style: none;
   margin: 0;
