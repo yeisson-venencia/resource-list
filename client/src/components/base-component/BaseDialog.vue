@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <teleport to="body">
     <div class="divi"></div>
     <dialog open>
       <header>
@@ -14,7 +14,7 @@
         <slot name="actions"></slot>
       </menu>
     </dialog>
-  </div>
+  </teleport>
 </template>
 
 <script>
