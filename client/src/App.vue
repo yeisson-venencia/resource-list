@@ -6,7 +6,10 @@
       @change-content="changeContent"
       :currentTab="selectedContent"
     ></the-nav>
-    <the-content :contentId="selectedContent"></the-content>
+    <the-content
+      :contentId="selectedContent"
+      @resource-added="changeContent"
+    ></the-content>
   </div>
 </template>
 
